@@ -1,6 +1,5 @@
 fun main() {
     val likes = 126742
-    val neOnes = likes / 10
     val ones = likes % (likes / 10)
     val tens = likes / 10 % 10 * 10 + ones
     var ending: String = ""
