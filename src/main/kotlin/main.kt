@@ -1,45 +1,19 @@
 fun main() {
-    val likes = 126714
-    val ones = likes % (likes / 10)
-    val tens = likes / 10 % 10 * 10 + ones
-    var ending: String = ""
+    var likes = 0
 
-    if ((likes >= 0) && (likes < 10)) {
-        when (likes) {
-            0 -> ending = "подписчиков"
-            1 -> ending = "подписчик"
-            2 -> ending = "подписчика"
-            3 -> ending = "подписчика"
-            4 -> ending = "подписчика"
-            5 -> ending = "подписчиков"
-            6 -> ending = "подписчиков"
-            7 -> ending = "подписчиков"
-            8 -> ending = "подписчиков"
-            9 -> ending = "подписчиков"
-        }
-    } else {
-        if ((likes >= 10) && (likes <= 20)) {
-            ending = "подписчиков"
-        } else {
-            if ((tens > 10) && (tens < 20)) {
-                ending = "подписчиков"
-            } else {
-                if ((likes > 20) || (likes < 10)) {
-                    when (ones) {
-                        0 -> ending = "подписчиков"
-                        1 -> ending = "подписчик"
-                        2 -> ending = "подписчика"
-                        3 -> ending = "подписчика"
-                        4 -> ending = "подписчика"
-                        5 -> ending = "подписчиков"
-                        6 -> ending = "подписчиков"
-                        7 -> ending = "подписчиков"
-                        8 -> ending = "подписчиков"
-                        9 -> ending = "подписчиков"
-                    }
-                }
+    while (likes <= 1112) {
+        var ending: String = "подписчиков"
+        var ones = likes % 10
+        var tens = likes % 100
+        if (!((tens >= 11) && (tens <= 14))) {
+            when (ones) {
+                1 -> ending = "подписчик"
+                2 -> ending = "подписчика"
+                3 -> ending = "подписчика"
+                4 -> ending = "подписчика"
             }
         }
+        println("У Вас $likes $ending")
+        likes++
     }
-    println("У Вас $likes $ending")
 }
